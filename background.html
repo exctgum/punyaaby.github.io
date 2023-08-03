@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio dengan Gambar Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .change-background-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+    <button class="change-background-btn" onclick="openImageInput()">Unggah Gambar Background</button>
+
+    <script>
+        function openImageInput() {
+            document.getElementById('imageInput').click();
+        }
+
+        document.getElementById('imageInput').addEventListener('change', function() {
+            const file = this.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const dataURL = reader.result;
+                document.body.style.backgroundImage = `url('${dataURL}')`;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
