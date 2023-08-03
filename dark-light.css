@@ -1,0 +1,29 @@
+/* styles.css */
+
+/* Light Mode */
+body.light-mode {
+    /* Atur properti CSS yang sesuai untuk light mode */
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    /* Atur properti CSS yang sesuai untuk dark mode */
+    background-color: #333;
+    color: #fff;
+}
+
+/* Tombol Toggle Mode */
+.toggle-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
